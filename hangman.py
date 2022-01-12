@@ -43,15 +43,18 @@ def start_game():
             break
         
         else:
-            print("--------------------------------------------------\n")
+            print("----------------------------------------------------------------------------------------------------\n")
 
 if __name__ == '__main__':
-    print("\n-------------------------- Welcome to Hangman CLI game! -------------------------- ")
+    print("\n------------------------------------- Welcome to Hangman CLI game! ------------------------------------- ")
     
     intro = """
-    Application will randomly pick a word from the internet. You are expected to guess ONE letter in the word at each turn.
-    
-    The objective is to correctly guess the word that the application has picked. You can have SIX wrong guesses (guessed letter not in word) before it's game over!  
+    - Application will randomly pick a word from the internet. 
+    - You are expected to guess ONE letter in the word at each turn.
+    - The objective is to correctly guess the word that the application has picked. 
+    - You can have upto SIX incorrect guesses (i.e., guessed letter not in word) before it's game over.
+
+    Good luck!
     """
     print(dedent(intro))
     
