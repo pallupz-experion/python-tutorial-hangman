@@ -25,7 +25,7 @@ def get_valid_guess(guessed_letters):
     guess = input("Enter your guess: ")
     
     if len(guess) != 1:
-        print(f"WARNING: Guess only one character at a time.")
+        print(f"WARNING: Guess one character at a time.")
         guess = get_valid_guess(guessed_letters)
     
     elif guess in guessed_letters:
