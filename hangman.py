@@ -10,11 +10,10 @@ def start_game():
         word = get_random_word()
         # word = 'blah'
         print(f"Okay, here we go: The secret word is {len(word)} characters long.\n")
-        masked_word = ''.join('_' * len(word))
+        masked_word = '_' * len(word)
         
         while True:
             print("\n")
-            masked_word = get_unmasked_word(word, masked_word, guessed_letters)
             print(f"Secret Word: {masked_word}")
 
             if masked_word == word:
@@ -37,6 +36,8 @@ def start_game():
                 incorrect_guess_count -= 1
                 print(f"You have {incorrect_guess_count} incorrect guesses left.")
 
+            masked_word = get_unmasked_word(word, masked_word, guess)
+
         play = input("\nWould you like to play again? (y/n): ")
         if play.lower() != 'y':
             print("Bye Bye! Hope you had fun!")
@@ -44,6 +45,7 @@ def start_game():
         
         else:
             print("----------------------------------------------------------------------------------------------------\n")
+
 
 if __name__ == '__main__':
     print("\n------------------------------------- Welcome to Hangman CLI game! ------------------------------------- ")

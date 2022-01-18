@@ -1,5 +1,6 @@
 import requests
 
+
 def get_random_word():
     URL = 'https://random-word-api.herokuapp.com/word'
     word = requests.get(URL).json()[0]
@@ -8,15 +9,14 @@ def get_random_word():
         word = get_random_word()
     
     return word.lower()
-    
 
-def get_unmasked_word(word, masked_word, guessed_letters):
+
+def get_unmasked_word(word, masked_word, guess):
     masked_word = list(masked_word)
-    for letter in guessed_letters:
-        if letter in word:
-            positions = [pos for pos, char in enumerate(word) if char == letter]
-            for pos in positions:
-                masked_word[pos] = letter
+    if guess in word:
+        positions = [pos for pos, char in enumerate(word) if char == guess]
+        for pos in positions:
+            masked_word[pos] = guess
     
     return ''.join(masked_word)
 
